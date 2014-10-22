@@ -30,6 +30,7 @@
     self.base2_view.delegate = self;
     
     [_num2_field setEnabled:false];
+    [self.base1_view selectRow:3 inComponent:0 animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,13 +56,13 @@
     return _picker_Data[row];
 }
 
-- (NSString*)convertBase:(long int)number_to_convert:(int)base
+- (NSString*)convertBase:(long int) number_to_convert base:(int)base
 {
     char base_digits[16] =
     {'0', '1', '2', '3', '4', '5', '6', '7',
         '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
     int converted_number[64];
-    int next_digit, index=0;
+    int index=0;
     
     /* convert to the indicated base */
     while (number_to_convert != 0)
@@ -74,13 +75,13 @@
     /* now print the result in reverse order */
     --index;  /* back up to last entry in the array */
     
-    char str[index];
+    //char str[index];
+    NSMutableString *result=[[NSMutableString alloc]init];
     int i,j;
     for(  j=0, i=index; i>=0; j++,i--) /* go backward through array */
     {
-        str[j] = base_digits[converted_number[i]];
+        [result appendFormat:@"%c",base_digits[converted_number[i]]];
     }
-    NSString *result = [NSString stringWithCString:str encoding:NSUTF8StringEncoding];
     return result;
 }
 
@@ -91,7 +92,8 @@
     input2_value = [_num2_field.text intValue];
     
     int base1 = [[_picker_Data objectAtIndex:[_base1_view selectedRowInComponent:0]] intValue];
-    int base2 = [[_picker_Data objectAtIndex:[_base2_view selectedRowInComponent:0]] intValue];
-    _num2_field.text = [self convertBase: input1_value : base1];
+    NSString *converted_number = [self convertBase: input1_value base: base1];
+    _num2_field.text =converted_number;
+    NSLog(@"%@", converted_number);
 }
 @end
