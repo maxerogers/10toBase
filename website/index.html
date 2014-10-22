@@ -3,76 +3,76 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.3.11/slick.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.3.11/slick.min.js"></script>
+
+<style>
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+body{
+  style="display:block;
+  margin:auto;"
+}
+.slick-prev::before, .slick-next::before{
+  color:black;
+}
+</style>
+
 </head>
 <body>
+<div class="container">
 <h1> 10toBase </h1>
 <p> An iOS application to convert any decimal number into a different base. The supported bases are [2,3,8,10,12,16].</p>
 <p> To use it simply type in your decimal number in the enabled text field. </p>
 <p> Then select the new base using the spinning selector. </p>
 <p> Finally press the convert button. </p>
 <p> And presto changeo you have the new number. </p>
-<video width="320" height="240" controls>
-  <source src="vid/10toBase_15.mov" type="video/mov">
-Your browser does not support the video tag.
-</video>
 
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="img/256_2.png" alt="...">
-      <div class="carousel-caption">
-        ...
-      </div>
-    </div>
-    <div class="item">
-      <img src="img/256_3.png" alt="...">
-      <div class="carousel-caption">
-        ...
-      </div>
-    </div>
-    <div class="item active">
-      <img src="img/256_8.png" alt="...">
-      <div class="carousel-caption">
-        ...
-      </div>
-    </div>
-    <div class="item">
-      <img src="img/256_10.png" alt="...">
-      <div class="carousel-caption">
-        ...
-      </div>
-    </div>
-    <div class="item active">
-      <img src="img/256_12.png" alt="...">
-      <div class="carousel-caption">
-        ...
-      </div>
-    </div>
-    <div class="item">
-      <img src="img/256_16.png" alt="...">
-      <div class="carousel-caption">
-        ...
-      </div>
-    </div>
-    ...
-  </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
+<div class="your-class2">
+    <div><video height="600" controls>
+      <source src="vid/10toBase_15.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video></div>
+    <div><video height="600" controls>
+      <source src="vid/10toBase_256.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video></div>
 </div>
 
+
+<div class="your-class">
+    <div><img style="display:block;
+    margin:auto;" src="img/256_2.png"></div>
+    <div><img style="display:block;
+    margin:auto;" src="img/256_3.png"></div>
+    <div><img style="display:block;
+    margin:auto;" src="img/256_8.png"></div>
+    <div><img style="display:block;
+    margin:auto;" src="img/256_10.png"></div>
+    <div><img style="display:block;
+    margin:auto;" src="img/256_12.png"></div>
+    <div><img style="display:block;
+    margin:auto;" src="img/256_16.png"></div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+	$('.your-class').slick(
+    {
+      dots: true
+    }
+  );
+  $('.your-class2').slick(
+    {
+      dots: true
+    }
+  );
+});
+
+</script>
+</div>
 </body>
 </html>
